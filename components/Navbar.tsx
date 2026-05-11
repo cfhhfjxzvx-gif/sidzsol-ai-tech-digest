@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import SearchModal from './SearchModal';
@@ -65,12 +66,20 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
               <motion.div 
-                className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.5)] relative overflow-hidden"
+                className="relative w-10 h-10 flex items-center justify-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="absolute inset-0 bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="text-white font-bold text-lg relative z-10">S</span>
+                {/* Subtle glow behind logo */}
+                <div className="absolute inset-0 rounded-xl bg-indigo-500/20 blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+                <Image
+                  src="/logo.png"
+                  alt="SidZsol"
+                  width={40}
+                  height={40}
+                  className="relative z-10 rounded-lg drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]"
+                  priority
+                />
               </motion.div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-white tracking-tight leading-none group-hover:text-indigo-200 transition-colors">SidZsol</span>

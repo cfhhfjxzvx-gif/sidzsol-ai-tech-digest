@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
@@ -29,8 +30,15 @@ export default function Footer() {
             className="col-span-2 md:col-span-1"
           >
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
+              <div className="relative w-9 h-9 flex items-center justify-center">
+                <div className="absolute inset-0 rounded-lg bg-indigo-500/15 blur-md" />
+                <Image
+                  src="/logo.png"
+                  alt="SidZsol"
+                  width={36}
+                  height={36}
+                  className="relative z-10 rounded-lg drop-shadow-[0_0_6px_rgba(99,102,241,0.3)]"
+                />
               </div>
               <div>
                 <p className="text-sm font-bold text-white leading-tight">SidZsol</p>
