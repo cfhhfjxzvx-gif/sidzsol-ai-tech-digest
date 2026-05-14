@@ -18,7 +18,7 @@ export default function HeroSection({ article }: { article: Article }) {
 
   return (
     <section className="relative pt-32 pb-20">
-      <Link href={`/article/${article.slug}`} className="block group">
+      <Link href={`/article/${article.slug}`} className="block group relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ export default function HeroSection({ article }: { article: Article }) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="max-w-3xl"
+              className="max-w-5xl"
             >
               <div className="flex items-center gap-3 mb-6">
                 <span className="px-3 py-1 text-[10px] font-bold tracking-widest uppercase bg-white text-black rounded-full">

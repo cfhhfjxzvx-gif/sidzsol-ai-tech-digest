@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import VantaBackground from '@/components/VantaBackground';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -49,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col selection:bg-indigo-500/30">
+        <VantaBackground />
         {/* Subtle noise texture for a premium tactile feel */}
         <div className="noise-overlay" aria-hidden="true" />
         

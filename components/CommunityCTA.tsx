@@ -21,11 +21,11 @@ export default function CommunityCTA({
             6,700+ community members
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight max-w-4xl mx-auto leading-[1.1]">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight max-w-5xl mx-auto leading-[1.1]">
             {title}
           </h2>
           
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
             {subtitle}
           </p>
 

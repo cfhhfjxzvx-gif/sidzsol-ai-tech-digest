@@ -20,7 +20,7 @@ export default function Footer() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] sm:w-[400px] h-[60px] sm:h-[100px] bg-gradient-to-b from-indigo-500/[0.04] to-transparent blur-2xl hidden sm:block" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+      <div className="relative max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
