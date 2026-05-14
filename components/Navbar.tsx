@@ -64,61 +64,48 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <motion.div 
-                className="relative w-10 h-10 flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {/* Subtle glow behind logo */}
-                <div className="absolute inset-0 rounded-xl bg-indigo-500/20 blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <div className="relative w-8 h-8 flex items-center justify-center">
                 <Image
                   src="/logo.png"
                   alt="SidZsol"
-                  width={40}
-                  height={40}
-                  className="relative z-10 rounded-lg drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]"
+                  width={32}
+                  height={32}
+                  className="rounded-lg object-contain"
                   priority
                 />
-              </motion.div>
+              </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-white tracking-tight leading-none group-hover:text-indigo-200 transition-colors">SidZsol</span>
-                <span className="text-[10px] text-indigo-400 font-bold tracking-widest uppercase mt-1">Community</span>
+                <span className="text-base font-bold text-white tracking-tight leading-none">SidZsol</span>
+                <span className="text-[9px] text-slate-500 font-medium tracking-[0.2em] uppercase mt-1">Founders hub</span>
               </div>
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-1 bg-white/5 border border-white/10 rounded-2xl p-1 backdrop-blur-md">
+            <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative px-4 py-2 text-sm font-medium rounded-xl transition-colors duration-200 ${
+                    className={`px-4 py-2 text-sm font-medium transition-colors duration-200 ${
                       isActive
                         ? 'text-white'
-                        : 'text-slate-400 hover:text-white hover:bg-white/5'
+                        : 'text-slate-400 hover:text-white'
                     }`}
                   >
-                    {isActive && (
-                      <motion.div
-                        layoutId="navIndicator"
-                        className="absolute inset-0 bg-white/10 rounded-xl border border-white/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]"
-                        transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                      />
-                    )}
-                    <span className="relative z-10">{link.label}</span>
+                    {link.label}
                   </Link>
                 );
               })}
             </div>
 
             {/* Actions */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <button
                 onClick={() => setSearchOpen(true)}
-                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:bg-white/10 hover:border-indigo-500/50 transition-all duration-300 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                className="text-slate-400 hover:text-white transition-colors p-1"
                 aria-label="Search"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -130,9 +117,9 @@ export default function Navbar() {
                 href="https://discord.gg/sidzsol"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden lg:flex btn-gradient px-5 py-2.5 rounded-xl text-sm font-bold"
+                className="hidden lg:block btn-premium !py-2 !px-5 text-sm"
               >
-                Join Discord
+                Join Community
               </a>
 
               {/* Hamburger — mobile only */}

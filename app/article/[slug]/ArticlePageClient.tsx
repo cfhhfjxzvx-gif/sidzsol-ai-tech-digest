@@ -5,17 +5,8 @@ import Link from 'next/link';
 import { formatDate } from '@/lib/data';
 import ArticleCard from '@/components/ArticleCard';
 import CommunityCTA from '@/components/CommunityCTA';
+import BackButton from '@/components/BackButton';
 import type { Article } from '@/lib/types';
-
-const categoryColors: Record<string, string> = {
-  'Startup Growth': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-  'AI Business': 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
-  'Founder Lessons': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-  'Product Strategy': 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
-  'Funding & Finance': 'bg-pink-500/10 text-pink-400 border-pink-500/20',
-  'Builder Tools': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
-  'Scaling & Ops': 'bg-violet-500/10 text-violet-400 border-violet-500/20',
-};
 
 export default function ArticlePageClient({
   article,
@@ -25,168 +16,123 @@ export default function ArticlePageClient({
   relatedArticles: Article[];
 }) {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
-      {/* Breadcrumb */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.1 }}
-        className="flex items-center gap-2 text-xs text-slate-500 mb-6"
-      >
-        <Link href="/" className="hover:text-indigo-400 transition-colors">Home</Link>
-        <span className="text-slate-600">/</span>
-        <Link href="/categories" className="hover:text-indigo-400 transition-colors">{article.category}</Link>
-        <span className="text-slate-600">/</span>
-        <span className="text-slate-400 truncate max-w-[200px]">{article.title}</span>
-      </motion.div>
-
-      {/* Hero Image */}
-      <motion.div
-        initial={{ opacity: 0, y: 25, scale: 0.98 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="relative rounded-2xl overflow-hidden mb-8 glow-blue"
-      >
-        <div className="aspect-[2/1] overflow-hidden">
-          <motion.img
-            src={article.imageUrl}
-            alt={article.title}
-            className="w-full h-full object-cover"
-            initial={{ scale: 1.05 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#04050a]/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 to-transparent" />
-      </motion.div>
-
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+      <BackButton />
       {/* Article Header */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.15 }}
+        transition={{ duration: 0.6 }}
       >
-        <div className="flex items-center gap-3 mb-4">
-          <span className={`px-3 py-1.5 text-xs font-medium rounded-full border backdrop-blur-sm ${categoryColors[article.category] || ''}`}>
+        <div className="flex items-center gap-4 mb-8">
+          <span className="px-2.5 py-1 text-[9px] font-bold tracking-widest uppercase bg-white text-black rounded-sm">
             {article.category}
           </span>
-          <span className="text-xs text-slate-500 bg-white/[0.03] px-2.5 py-1 rounded-full border border-white/[0.06]">{article.readTime} min read</span>
+          <span className="text-xs font-medium text-slate-500">{article.readTime} min read</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4">
+        
+        <h1 className="text-4xl md:text-6xl font-bold text-white leading-[1.1] mb-8 tracking-tight">
           {article.title}
         </h1>
-        <div className="flex items-center gap-4 text-sm text-slate-400 mb-8">
-          <div className="flex items-center gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500" />
-            <span>{article.source}</span>
+        
+        <div className="flex items-center gap-6 text-sm text-slate-400 mb-12">
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+            <span className="font-medium text-slate-300">{article.source}</span>
           </div>
-          <span className="w-1 h-1 rounded-full bg-slate-600" />
           <span>{formatDate(article.publishedAt)}</span>
         </div>
       </motion.div>
 
-      {/* AI Summary */}
+      {/* Hero Image */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.25 }}
-        className="glass rounded-2xl p-6 mb-8 glow-border relative overflow-hidden"
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+        className="relative rounded-3xl overflow-hidden mb-16 aspect-[21/10]"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.03] to-purple-500/[0.02]" />
-        <div className="relative flex items-center gap-2.5 mb-3">
-          <motion.div
-            className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center"
-            animate={{ boxShadow: ['0 0 10px rgba(99,102,241,0.2)', '0 0 20px rgba(99,102,241,0.4)', '0 0 10px rgba(99,102,241,0.2)'] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-            </svg>
-          </motion.div>
-          <span className="text-sm font-bold gradient-text">AI Summary</span>
-        </div>
-        <p className="relative text-sm text-slate-300 leading-relaxed">{article.aiSummary}</p>
+        <img
+          src={article.imageUrl}
+          alt={article.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#040507] via-transparent to-transparent opacity-40" />
       </motion.div>
 
-      {/* Founder Takeaway */}
-      {article.founderTakeaway && (
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="glass rounded-2xl p-6 mb-8 relative overflow-hidden border border-emerald-500/20"
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.05] to-teal-500/[0.03]" />
-          <div className="relative flex items-center gap-2.5 mb-3">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-              </svg>
+          {/* Main Content */}
+          <div className="prose prose-invert prose-slate max-w-none mb-16">
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-8 font-medium">
+              {article.aiSummary}
+            </p>
+            <div className="h-px bg-white/[0.05] my-12" />
+            <p className="text-slate-400 leading-relaxed text-lg">
+              {article.content}
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 mb-20">
+            <a
+              href={article.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-premium px-8 py-4 text-center"
+            >
+              Read full briefing at {article.source}
+            </a>
+            <Link
+              href="/"
+              className="btn-secondary px-8 py-4 text-center"
+            >
+              Back to feed
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Sidebar Features */}
+        <aside className="space-y-8">
+          {article.founderTakeaway && (
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="glass rounded-2xl p-6 border border-indigo-500/10"
+            >
+              <div className="flex items-center gap-2 mb-4 text-indigo-400">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                </svg>
+                <span className="text-xs font-bold uppercase tracking-widest">Founder Takeaway</span>
+              </div>
+              <p className="text-sm text-slate-300 leading-relaxed italic">
+                "{article.founderTakeaway}"
+              </p>
+            </motion.div>
+          )}
+
+          <div className="glass rounded-2xl p-6">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">Related Briefings</h3>
+            <div className="space-y-6">
+              {relatedArticles.slice(0, 3).map((a) => (
+                <Link key={a.id} href={`/article/${a.slug}`} className="block group">
+                  <h4 className="text-sm font-bold text-white group-hover:text-indigo-400 transition-colors line-clamp-2 mb-2">
+                    {a.title}
+                  </h4>
+                  <span className="text-[10px] text-slate-500 uppercase tracking-wider">{a.source}</span>
+                </Link>
+              ))}
             </div>
-            <span className="text-sm font-bold text-emerald-400">Founder Takeaway</span>
           </div>
-          <p className="relative text-sm text-slate-300 leading-relaxed">{article.founderTakeaway}</p>
-        </motion.div>
-      )}
+        </aside>
+      </div>
 
-      {/* Article Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="mb-10"
-      >
-        <p className="text-slate-300 leading-relaxed text-base">{article.content}</p>
-      </motion.div>
-
-      {/* Source Link */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="flex flex-col sm:flex-row gap-3 mb-16"
-      >
-        <motion.a
-          href={article.sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          className="btn-gradient px-6 py-3 rounded-xl text-sm font-semibold text-center"
-        >
-          <span className="relative z-10">Read Full Article on {article.source} →</span>
-        </motion.a>
-        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-          <Link
-            href="/"
-            className="block px-6 py-3 rounded-xl text-sm font-semibold border border-white/10 text-white hover:bg-white/[0.04] hover:border-indigo-500/20 transition-all duration-300 text-center"
-          >
-            ← Back to Feed
-          </Link>
-        </motion.div>
-      </motion.div>
-
-      {/* Related Articles */}
-      {relatedArticles.length > 0 && (
-        <section className="mb-12">
-          <div className="section-divider mb-10" />
-          <motion.h2
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xl font-bold text-white mb-6"
-          >
-            Related Articles
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {relatedArticles.map((a, i) => (
-              <ArticleCard key={a.id} article={a} index={i} />
-            ))}
-          </div>
-        </section>
-      )}
-
+      <div className="section-divider my-24" />
+      
       <CommunityCTA />
     </div>
   );

@@ -48,14 +48,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
-        {/* Multi-layer animated background */}
-        <div className="bg-mesh" aria-hidden="true" />
-        <div className="bg-horizon" aria-hidden="true" />
-
-        {/* Noise texture overlay for film grain effect */}
+      <body className="min-h-full flex flex-col selection:bg-indigo-500/30">
+        {/* Subtle noise texture for a premium tactile feel */}
         <div className="noise-overlay" aria-hidden="true" />
-
+        
         <Navbar />
         <main className="flex-1 relative">{children}</main>
         <Footer />

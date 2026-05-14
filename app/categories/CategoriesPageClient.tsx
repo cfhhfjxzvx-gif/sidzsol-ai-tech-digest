@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import CategoryTabs from '@/components/CategoryTabs';
 import ArticleCard from '@/components/ArticleCard';
+import BackButton from '@/components/BackButton';
 import { articles, getArticlesByCategory, categories } from '@/lib/data';
 import type { Category } from '@/lib/types';
 
@@ -37,7 +38,8 @@ export default function CategoriesPageClient() {
   const filtered = active === 'All' ? articles : getArticlesByCategory(active);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
+      <BackButton />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

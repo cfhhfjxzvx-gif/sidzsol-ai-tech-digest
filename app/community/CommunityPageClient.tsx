@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import CommunityCTA from '@/components/CommunityCTA';
 import AnimatedStats from '@/components/AnimatedStats';
+import BackButton from '@/components/BackButton';
 import { useEffect, useState } from 'react';
 
 const platforms = [
@@ -22,7 +23,8 @@ export default function CommunityPageClient() {
   }, []);
 
   return (
-    <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-12 sm:pb-16">
+    <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12 sm:pb-16">
+      <BackButton />
       {!isMobile && (
         <>
           <div className="absolute -top-20 -left-20 w-80 h-80 bg-indigo-500/[0.07] rounded-full blur-[100px] pointer-events-none" />
