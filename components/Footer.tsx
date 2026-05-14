@@ -7,12 +7,12 @@ import { motion } from 'framer-motion';
 export default function Footer() {
   const quickLinks = [
     { label: 'Home', href: '/' },
-    { label: 'Weekly Digest', href: '/digest' },
+    { label: "Founder's Digest", href: '/digest' },
     { label: 'Categories', href: '/categories' },
-    { label: 'Community', href: '/community' },
+    { label: 'Founders Hub', href: '/community' },
     { label: 'About', href: '/about' },
   ];
-  const cats = ['AI Tools', 'Tech News', 'Developer News', 'Startups', 'Gadgets', 'Productivity'];
+  const cats = ['Startup Growth', 'AI Business', 'Founder Lessons', 'Product Strategy', 'Funding & Finance', 'Builder Tools', 'Scaling & Ops'];
 
   return (
     <footer className="relative mt-16 sm:mt-24 border-t border-white/[0.04]">
@@ -46,7 +46,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-xs">
-              AI-powered tech digest delivering the latest in artificial intelligence, developer tools, and emerging technology.
+              Premium intelligence hub for builders, delivering high-signal startup insights, AI business trends, and execution frameworks.
             </p>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>

@@ -30,9 +30,9 @@ export default function NewsletterSection() {
         
         <div className="relative z-10 flex flex-col sm:flex-row items-center gap-5 sm:gap-8">
           <div className="flex-1 text-center sm:text-left">
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1.5 sm:mb-2">Stay ahead of the curve</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1.5 sm:mb-2">Built for founders who ship</h3>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-md">
-              Get weekly AI & tech insights delivered to your inbox. No spam, unsubscribe anytime.
+              Weekly startup intelligence, AI business trends, and founder playbooks. No fluff, just signal.
             </p>
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto relative">

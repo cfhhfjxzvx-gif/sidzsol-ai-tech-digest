@@ -5,10 +5,10 @@ import CommunityCTA from '@/components/CommunityCTA';
 import { useEffect, useState } from 'react';
 
 const values = [
-  { icon: '🤖', title: 'AI-First Approach', desc: 'Every article is enriched with AI-generated summaries for fast, clear understanding.', gradient: 'from-indigo-500/10 to-purple-500/5' },
-  { icon: '⚡', title: 'Speed & Clarity', desc: 'Get the essence of complex tech stories in seconds, not minutes.', gradient: 'from-amber-500/10 to-orange-500/5' },
-  { icon: '🌐', title: 'Community Driven', desc: 'Built for and shaped by our growing community of tech enthusiasts.', gradient: 'from-emerald-500/10 to-teal-500/5' },
-  { icon: '🔓', title: 'Open & Transparent', desc: 'We always link to original sources and give proper attribution.', gradient: 'from-blue-500/10 to-cyan-500/5' },
+  { icon: '🚀', title: 'Founder-Centric', desc: 'Every insight is filtered through the lens of early-stage builders and entrepreneurs.', gradient: 'from-indigo-500/10 to-purple-500/5' },
+  { icon: '💡', title: 'Actionable Intelligence', desc: 'We go beyond news to provide practical takeaways and execution frameworks.', gradient: 'from-amber-500/10 to-orange-500/5' },
+  { icon: '🤖', title: 'AI-First Analysis', desc: 'Leveraging AI to synthesize complex market trends into high-signal briefings.', gradient: 'from-emerald-500/10 to-teal-500/5' },
+  { icon: '📈', title: 'Growth Mindset', desc: 'Focused on scaling, ops efficiency, and building defensible AI products.', gradient: 'from-blue-500/10 to-cyan-500/5' },
 ];
 
 const roadmap = [
@@ -49,8 +49,8 @@ export default function AboutPageClient() {
         )}
         <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.4 : 0.7 }} className="relative text-center">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[11px] sm:text-xs font-medium mb-4 sm:mb-5">About Us</div>
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-5 leading-tight">The future of tech news is{' '}<span className="gradient-text">AI-powered</span></h1>
-          <p className="text-xs sm:text-sm md:text-base text-slate-400 max-w-xl mx-auto leading-relaxed px-2">SidZsol AI & Tech Digest is a next-generation tech media platform by SidZsol Technologies. We use AI to curate, summarize, and deliver the most important stories in artificial intelligence, developer tools, startups, and emerging technology.</p>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-5 leading-tight">Intelligence for those who{' '}<span className="gradient-text">build the future</span></h1>
+          <p className="text-xs sm:text-sm md:text-base text-slate-400 max-w-xl mx-auto leading-relaxed px-2">SidZsol Founders Digest is a premium intelligence hub for ambitious builders. We cut through the noise to deliver high-signal startup insights, AI business opportunities, and execution frameworks that help you scale faster.</p>
         </motion.div>
       </div>
 

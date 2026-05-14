@@ -8,13 +8,13 @@ import CommunityCTA from '@/components/CommunityCTA';
 import type { Article } from '@/lib/types';
 
 const categoryColors: Record<string, string> = {
-  'AI Tools': 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
-  'Tech News': 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
-  'Productivity': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-  'Developer News': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
-  'Startups': 'bg-pink-500/10 text-pink-400 border-pink-500/20',
-  'Gadgets': 'bg-violet-500/10 text-violet-400 border-violet-500/20',
-  'Content Creation': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+  'Startup Growth': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+  'AI Business': 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
+  'Founder Lessons': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+  'Product Strategy': 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
+  'Funding & Finance': 'bg-pink-500/10 text-pink-400 border-pink-500/20',
+  'Builder Tools': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
+  'Scaling & Ops': 'bg-violet-500/10 text-violet-400 border-violet-500/20',
 };
 
 export default function ArticlePageClient({
@@ -109,11 +109,32 @@ export default function ArticlePageClient({
         <p className="relative text-sm text-slate-300 leading-relaxed">{article.aiSummary}</p>
       </motion.div>
 
+      {/* Founder Takeaway */}
+      {article.founderTakeaway && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="glass rounded-2xl p-6 mb-8 relative overflow-hidden border border-emerald-500/20"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.05] to-teal-500/[0.03]" />
+          <div className="relative flex items-center gap-2.5 mb-3">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+              </svg>
+            </div>
+            <span className="text-sm font-bold text-emerald-400">Founder Takeaway</span>
+          </div>
+          <p className="relative text-sm text-slate-300 leading-relaxed">{article.founderTakeaway}</p>
+        </motion.div>
+      )}
+
       {/* Article Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.35 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
         className="mb-10"
       >
         <p className="text-slate-300 leading-relaxed text-base">{article.content}</p>

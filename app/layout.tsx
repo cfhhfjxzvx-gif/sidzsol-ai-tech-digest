@@ -11,28 +11,29 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'SidZsol AI & Tech Digest — Your AI-Powered Tech News Hub',
-    template: '%s | SidZsol AI & Tech Digest',
+    default: 'SidZsol Founders Digest — Premium Intelligence for Builders',
+    template: '%s | SidZsol Founders Digest',
   },
   description:
-    'Stay ahead with AI-powered summaries of the latest in artificial intelligence, developer tools, startups, and emerging technology. Curated daily by SidZsol Technologies.',
+    'High-quality, founder-focused startup insights, AI business trends, and execution frameworks for ambitious builders. Stay ahead with curated intelligence by SidZsol.',
   keywords: [
-    'AI news',
+    'startup news',
+    'founder insights',
+    'AI business',
+    'startup growth',
     'tech digest',
-    'artificial intelligence',
-    'developer tools',
-    'startups',
-    'technology news',
+    'builder tools',
+    'entrepreneurship',
     'SidZsol',
   ],
   authors: [{ name: 'SidZsol Technologies' }],
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'SidZsol AI & Tech Digest',
-    title: 'SidZsol AI & Tech Digest — Your AI-Powered Tech News Hub',
+    siteName: 'SidZsol Founders Digest',
+    title: 'SidZsol Founders Digest — Premium Intelligence for Builders',
     description:
-      'AI-powered summaries of the latest in AI, developer tools, startups, and emerging technology.',
+      'High-quality startup insights, AI business trends, and execution frameworks for ambitious builders.',
   },
   twitter: {
     card: 'summary_large_image',

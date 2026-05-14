@@ -43,8 +43,8 @@ export default function DigestPageClient() {
           >
             Weekly Digest
           </motion.div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-4 sm:mb-6">The Signal, <br className="hidden sm:block" /><span className="gradient-text">Not the Noise</span></h1>
-          <p className="text-sm sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10 px-2">A curated weekly recap of the most important developments in AI and tech. Hand-picked and AI-summarized for maximum clarity.</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-4 sm:mb-6">The Founder's <br className="hidden sm:block" /><span className="gradient-text">Weekly Briefing</span></h1>
+          <p className="text-sm sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10 px-2">Curated startup intelligence, AI business opportunities, and execution frameworks — hand-picked for ambitious builders.</p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row justify-center gap-3 w-full max-w-md mx-auto relative z-10">
             {submitted ? (
@@ -78,7 +78,7 @@ export default function DigestPageClient() {
                   <span className="text-[10px] sm:text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2 sm:px-2.5 py-0.5 rounded-full border border-indigo-500/20">Issue #{42 - issue}</span>
                   <span className="text-[10px] sm:text-xs text-slate-500">{new Date(Date.now() - issue * 7 * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                 </div>
-                <h3 className="text-base sm:text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">{i === 0 ? 'Claude 4 Reasoning, Apple Vision Pro 2 & More' : i === 1 ? 'GPT-5 Rumors, Cursor IDE 2.0 & AI Hardware' : 'The State of Open Source AI in 2026'}</h3>
+                <h3 className="text-base sm:text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">{i === 0 ? 'One-Person Billion-Dollar Companies, Cursor\'s Growth Playbook & More' : i === 1 ? 'AI Agents for Startups, Pre-Seed Funding Guide & Builder Tools' : 'The Lean AI Founders Playbook: Scaling Without Headcount'}</h3>
               </div>
               <button className="relative z-10 px-5 sm:px-6 py-2 sm:py-2.5 rounded-xl text-sm font-medium border border-white/10 bg-white/5 hover:bg-indigo-500/20 hover:border-indigo-500/50 hover:text-indigo-300 transition-all duration-300 shrink-0 w-full sm:w-auto text-center">Read Issue</button>
             </motion.div>

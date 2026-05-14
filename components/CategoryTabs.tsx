@@ -5,13 +5,13 @@ import { categories } from '@/lib/data';
 import type { Category } from '@/lib/types';
 
 const categoryIcons: Record<string, string> = {
-  'AI Tools': '🤖',
-  'Tech News': '📡',
-  'Productivity': '⚡',
-  'Developer News': '💻',
-  'Startups': '🚀',
-  'Gadgets': '📱',
-  'Content Creation': '🎨',
+  'Startup Growth': '🚀',
+  'AI Business': '🤖',
+  'Founder Lessons': '🎯',
+  'Product Strategy': '♟️',
+  'Funding & Finance': '💰',
+  'Builder Tools': '🛠️',
+  'Scaling & Ops': '⚡',
 };
 
 interface CategoryTabsProps {

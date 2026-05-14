@@ -1,11 +1,11 @@
 export type Category =
-  | 'AI Tools'
-  | 'Tech News'
-  | 'Productivity'
-  | 'Developer News'
-  | 'Startups'
-  | 'Gadgets'
-  | 'Content Creation';
+  | 'Startup Growth'
+  | 'AI Business'
+  | 'Founder Lessons'
+  | 'Product Strategy'
+  | 'Funding & Finance'
+  | 'Builder Tools'
+  | 'Scaling & Ops';
 
 export interface Article {
   id: string;
@@ -14,6 +14,7 @@ export interface Article {
   summary: string;
   aiSummary: string;
   content: string;
+  founderTakeaway: string;
   imageUrl: string;
   source: string;
   sourceUrl: string;

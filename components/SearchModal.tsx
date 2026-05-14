@@ -134,7 +134,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 <div className="px-4 sm:px-5 py-6 sm:py-8 text-center text-slate-500">
                   <p className="text-xs sm:text-sm">Start typing to search articles...</p>
                   <div className="flex flex-wrap justify-center gap-2 mt-3 sm:mt-4">
-                    {['AI Tools', 'Startups', 'Rust', 'Claude', 'Vision Pro'].map((tag) => (
+                    {['Startup Growth', 'AI Business', 'Funding', 'Builder Tools', 'Scaling'].map((tag) => (
                       <button
                         key={tag}
                         onClick={() => handleSearch(tag)}

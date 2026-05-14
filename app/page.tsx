@@ -54,8 +54,8 @@ export default function HomePage() {
           className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-10"
         >
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">Latest Articles</h2>
-            <p className="text-xs sm:text-sm text-slate-500">AI-powered summaries of what matters in tech</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">Founder Intelligence</h2>
+            <p className="text-xs sm:text-sm text-slate-500">Curated insights for builders shipping the future</p>
           </div>
         </motion.div>
 

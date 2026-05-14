@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import DigestPageClient from './DigestPageClient';
 
 export const metadata: Metadata = {
-  title: 'Weekly Digest',
-  description: 'Top AI & tech stories of the week, curated and summarized by SidZsol Technologies.',
+  title: 'Founder\'s Weekly Briefing',
+  description: 'Curated startup intelligence, AI business trends, and execution frameworks for ambitious founders and builders.',
 };
 
 export default function DigestPage() {
