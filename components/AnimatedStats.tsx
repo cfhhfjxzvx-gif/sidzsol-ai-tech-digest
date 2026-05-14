@@ -12,7 +12,7 @@ interface Stat {
 }
 
 const defaultStats: Stat[] = [
-  { value: 6700, suffix: '+', label: 'Founders & Builders', icon: '🚀' },
+  { value: 6700, suffix: '+', label: 'Community Members', icon: '🚀' },
   { value: 120, suffix: '+', label: 'Weekly Insights', icon: '💡' },
   { value: 50, suffix: 'K+', label: 'Monthly Readers', icon: '📈' },
   { value: 24, suffix: '/7', label: 'Startup Intel', icon: '🎯' },

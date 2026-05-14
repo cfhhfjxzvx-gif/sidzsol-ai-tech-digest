@@ -9,7 +9,7 @@ export default function Footer() {
     { label: 'Home', href: '/' },
     { label: "Founder's Digest", href: '/digest' },
     { label: 'Categories', href: '/categories' },
-    { label: 'Founders Hub', href: '/community' },
+    { label: 'Community', href: '/community' },
     { label: 'About', href: '/about' },
   ];
   const cats = ['Startup Growth', 'AI Business', 'Founder Lessons', 'Product Strategy', 'Funding & Finance', 'Builder Tools', 'Scaling & Ops'];

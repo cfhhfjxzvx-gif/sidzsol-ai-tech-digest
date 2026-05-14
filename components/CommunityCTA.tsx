@@ -45,15 +45,15 @@ export default function CommunityCTA() {
               })}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-              6,700+ founders & builders
+              6,700+ community members
             </motion.div>
 
             <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-[1.15]">
-              Join the <span className="gradient-text">SidZsol Founders Hub</span>
+              Join the <span className="gradient-text">SidZsol AI & Tech Community</span>
             </h2>
             <p className="text-slate-400 max-w-xl mx-auto mb-8 sm:mb-10 text-sm sm:text-base md:text-lg leading-relaxed px-2">
-              Connect with ambitious founders, get daily startup intelligence,
-              share wins, and learn from builders shipping real products.
+              Connect with ambitious builders, discover startup and AI insights, 
+              share ideas, and grow with a community focused on building the future.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">

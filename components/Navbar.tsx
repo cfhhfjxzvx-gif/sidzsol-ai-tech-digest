@@ -11,7 +11,7 @@ const navLinks = [
   { label: 'Home', href: '/', icon: '🏠' },
   { label: "Founder's Digest", href: '/digest', icon: '📰' },
   { label: 'Categories', href: '/categories', icon: '📂' },
-  { label: 'Founders Hub', href: '/community', icon: '👥' },
+  { label: 'Community', href: '/community', icon: '👥' },
   { label: 'About', href: '/about', icon: 'ℹ️' },
 ];
 
@@ -83,7 +83,7 @@ export default function Navbar() {
               </motion.div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-white tracking-tight leading-none group-hover:text-indigo-200 transition-colors">SidZsol</span>
-                <span className="text-[10px] text-indigo-400 font-bold tracking-widest uppercase mt-1">Founders Hub</span>
+                <span className="text-[10px] text-indigo-400 font-bold tracking-widest uppercase mt-1">Community</span>
               </div>
             </Link>
 
